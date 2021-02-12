@@ -14,6 +14,25 @@ const Header = (title, date, temp) => {
 }
 
 const headerAppender = (selector) => {
+  const divHeader = document.createElement('div')
+  const spanDate = document.createElement('span')
+  const h1Title = document.createElement('h1')
+  const spanTemp = document.createElement('span')
+
+  divHeader.classList.add('header')
+  spanDate.classList.add('date')
+  spanTemp.classList.add('temp')
+
+  divHeader.appendChild(spanDate)
+  divHeader.appendChild(h1Title)
+  divHeader.appendChild(spanTemp)
+
+  spanDate.textContent = selector.date
+  h1Title.textContent = selector.title
+  spanTemp.textContent = selector.temp
+
+  return divHeader
+
   // TASK 2
   // ---------------------
   // Implement this function taking a css selector as its only argument.
